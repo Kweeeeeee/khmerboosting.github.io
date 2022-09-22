@@ -1,0 +1,87 @@
+{% include 'header.twig' %}
+
+<div class="inner-page">
+  <section>
+    <div class="container">
+      <div class="row justify-content-center register-panel">
+        <div class="col-lg-7">
+          <div class="card bg-white">
+            <div class="card-header">
+              <div class="card-title">
+              Sign up
+                <small> Join Us Now as a Free Member! </small>
+              </div>
+            </div>
+            
+            <div class="card-body">
+              <form  action="" method="post">
+                    {% if errorText %}
+        <div class="alert alert-dismissible alert-danger">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          {{ errorText }}
+        </div>
+      {% endif %}
+      {% if successText %}
+        <div class="alert alert-dismissible alert-success">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          {{ successText }}
+        </div>
+      {% endif %}
+                  <div class="form-group">
+                  <label for="name" class="control-label">Full Name</label>
+                  <input type="text" class="form-control" id="email" value="" name="name" placeholder="Full Name">
+                </div>
+                
+                <div class="form-group">
+                  <label for="username" class="control-label">Username </label>
+                  <input type="text" class="form-control" id="username" value="" name="username" placeholder="Username">
+                </div>
+                                <div class="form-group">
+                  <label for="email" class="control-label">Email</label>
+                  <input type="email" class="form-control" id="email" value="" name="email" placeholder="E-Mail">
+                </div>
+                <div class="form-group">
+                  <label for="number" class="control-label">Phone No.</label>
+                  <input type="number" class="form-control" id="telephone" value="" name="telephone" placeholder="Phone No.">
+                </div>
+                                <div class="form-group">
+                  <label for="password" class="control-label">Password</label>
+                  <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                </div>
+                <div class="form-group">
+                  <label for="confirm" class="control-label">Confirm Password</label>
+                  <input type="password" class="form-control" id="confirm" name="password_again" placeholder="Confirm Password">
+                </div>
+                                  
+                                                  <div class="form-group">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" class="terms-accept-checkbox" name="terms"> I Read And Agree <a href="/terms" target="_blank"> Usage Agreement </a>
+                      </label>
+                    </div>
+                  </div>
+                
+              
+          {% if captcha %}
+            <div class="form-group">
+              <div class="g-recaptcha" data-sitekey="{{ captchaKey }}"></div>
+            </div>
+          {% endif %}
+          
+                <button type="submit" class="btn btn-green">Sign Up </button>
+                <span class = "pull-right pull-right-middle"> Already a Member? <a href="/auth"> Sign In </a> </span>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+          <script src='https://www.google.com/recaptcha/api.js?hl=en'></script>
+    	</section>
+</div>
+
+
+
+
+{% include 'footer.twig' %}

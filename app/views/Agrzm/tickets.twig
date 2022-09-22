@@ -1,0 +1,101 @@
+{% include 'header.twig' %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+<div class="well ">
+  <center><font color="#000000"><b><font size="3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">SUPPORT HOURS</font></font></font></b></font></center>
+<br><center><font color="#FF6666"><font size="4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">09:00 - 17:30</font></font></font></font></center><br>
+
+          <p class="text-center ticket-term"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">In some cases, it may take up to 24 hours for your order to start due to Instagram updates! </font><font style="vertical-align: inherit;">The service descriptions indicate the starting and completion times of all orders.</font></font></p>
+    <ul class="list-p">
+          	
+          	</ul>
+          	<br>
+
+         
+          	<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">If your problem is resolved, please create a new support request.</font></font></p>
+        </div>
+   </div>
+   </div>   </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+
+      {% if error %}
+        <div class="alert alert-dismissible alert-danger {% if site['rtl'] %} rtl-alert {% endif %}">
+          <button type="button" class="close" data-dismiss="alert">×</button>
+          {{ errorText }}
+        </div>
+      {% elseif success %}
+        <div class="alert alert-dismissible alert-success {% if site['rtl'] %} rtl-alert {% endif %}">
+          <button type="button" class="close" data-dismiss="alert">×</button>
+          {{ successText }}
+        </div>
+      {% endif %}
+
+      {% if settings['ticket_system'] == 2 %}
+        <div class="well">    <center>
+      <h4>Create Support Request</h4><hr>
+   </center>
+          <form method="post" action="tickets">
+            <div class="form-group">
+             <select class="form-control incol" id="subject" name="subject">
+                    <option value="SİPARİŞ">ORDER</option>
+                    <option value="ÖDEME">PAYMENT</option>
+                    <option value="BAYİLİK">DEALERSHIP</option>
+                    <option value="DİĞER">OTHER</option>
+                  </select>
+                  <small class="text-muted">Please choose a topic that suits you.</small>
+            </div>
+            <div class="form-group">
+              <label for="message" class="control-label">{{ lang['tickets.message'] }}</label>
+              <textarea class="form-control" rows="7" id="message" name="message">{{ data['message'] }}</textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">{{ lang['tickets.button'] }}</button>
+          </form>
+        </div>
+      {% endif %}
+
+      <div class="well">  <center>
+      <h4>My Past Support Requests</h4><hr>
+   </center>
+          <table class="table ">
+            <thead>
+            <tr>
+              <th>{{ lang['tickets.id'] }}</th>
+              <th>{{ lang['tickets.subject'] }}</th>
+              <th>{{ lang['tickets.status'] }}</th>
+              <th class="nowrap">{{ lang['tickets.updated'] }}</th>
+            </tr>
+            </thead>
+            <tbody>
+              {% for ticket in ticketList %}
+                <tr>
+                  <td>{{ ticket['ticket_id'] }}</td>
+                  {% if ticket["support_new"] == 2 %}
+                    <td><a href="tickets/{{ ticket['ticket_id'] }}"><strong>{{ ticket['subject'] }}</strong></a></td>
+                  {% else %}
+                    <td><a href="tickets/{{ ticket['ticket_id'] }}">{{ ticket['subject'] }}</a></td>
+                  {% endif %}
+                  <td>{{ ticket['status'] }}</td>
+                  <td><span class="nowrap">{{ ticket['lastupdate_time'] }}</span></td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="well ">
+        {{ contentText }}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% include 'footer.twig' %}

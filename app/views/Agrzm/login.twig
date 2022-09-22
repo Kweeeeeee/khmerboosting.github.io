@@ -1,0 +1,133 @@
+{% include 'header.twig' %}
+
+
+
+
+
+
+<div class="container">
+    <div class="row mt-8 m-mt-3">
+        <div class="col-lg-6 col-md-12 col-xs-12 hidden-xs">
+            
+        <br>
+<img src="https://resimag.com/p1/a645bba861b.png" width="500" height="%100"></div>
+            <br><br>
+
+            <div class="col-lg-5 col-md-12 col-xs-12">
+            
+         <font size="7" font color="#fff">Welcome!</font><br>
+
+        
+        
+
+     
+      {% if errorText %}
+        <div class="alert alert-dismissible alert-danger">
+          <button type="button" class="close" data-dismiss="alert">×</button>
+          {{ errorText }}
+        </div>
+      {% endif %}
+      {% if successText %}
+        <div class="alert alert-dismissible alert-success">
+          <button type="button" class="close" data-dismiss="alert">×</button>
+          {{ successText }}
+        </div>
+      {% endif %}
+      <div class="well saydam">
+        <form  method="post" action="">
+          
+          
+        <div class="loginbox">  
+          
+   <div class="form-group">
+                        <div class="login-label ml-1 pt-3 pl-3">
+                            <i class="sli icon-user" aria-hidden="true"></i>
+            <label for="username" class="control-label">User name</label>
+                        </div>
+                        <input type="text" class="form-control login-input" id="username" name="username" placeholder="{{ lang['signin.username'] }}">
+                    </div>
+
+          <div class="form-group">
+                        <div class="login-label ml-1 pt-1 pl-3">
+                                       <label for="password" class="control-label">Password</label>
+                          <a href="/resetpassword" class="pull-right">Reset Password </a>
+			
+                                                    </div>
+                        <input type="password" class="form-control login-input" id="password" name="password" placeholder="{{ lang['signin.password'] }}">
+            
+                    </div>     </div>    
+      
+         <div class="checkbox">
+                   <input type="checkbox" name="remember" value="1" id="remember">
+              <label for="remember">
+                 Remember my information
+              </label>
+                                    
+                              </div>
+
+                       {% if captcha %}
+            <div class="form-group">
+              <div class="g-recaptcha" data-sitekey="{{ captchaKey }}"></div>
+            </div>
+          {% endif %}   
+ 
+          <button type="submit" class="btn btn-primary login-btn btn-block"><strong>Login</strong></button><br><hr>
+<p class="ucretsizuyelik"> {{ settings['site_name']  }} memberships are completely free. Do not respect the people who want to sell you membership for money! if  {{ settings['site_name']  }} if you are not a member <a href="/signup"> you can sign up now! </a>
+              <span class="forget-ps">Create New Account <a href="/signup">Register</a></span>
+          
+                  </form>
+      </div>     
+      </div>if you are not a member
+      </div>
+
+
+  <br>
+<hr>
+  
+  
+<div class="col-lg-12 col-md-12 col-sm-12 hidden-xs">  
+  <ul style="list-style: none;">
+    
+    <center><h1><font color="#e7e6e6">SMM Panel - Social Media Dealership Panel</font></h1></center>
+    
+    
+<br>
+<center><h3><span style="font-weight:300;"> <font color="#e7e6e6">buydigital.com is a social media dealership panel that works completely automatically. in seconds without the need your social media needs someone that can perform in Turkey with the most affordable prices, you can earn revenue by selling hard if you wish.</font></span></h3>
+<font color="#e7e6e6">	<li><h4><i class="fa fa-check"></i> Instant balance, 0% commission!</h4></li>
+	<li><h4><i class="fa fa-check"></i> The cheapest, highest quality services on the market!</h4></li>
+	<li><h4><i class="fa fa-check"></i> The best panel support on the market!</h4></li>
+	<li><h4><i class="fa fa-check"></i> API Support for panel owners!</h4></li>
+<ul>
+</ul></font></ul>
+  </div> </div>
+</div>
+  </div><center>
+<br><br>
+<hr>
+  
+  
+<div class="col-lg-12 col-md-12 col-sm-12 hidden-xs">  
+  <ul style="list-style: none;">
+    
+    <center><h1><font color="#e7e6e6">SMM Panel - Social Media Dealership Panel</font></h1></center>
+    
+    
+<br>
+<center><h3><span style="font-weight:300;"> <font color="#e7e6e6">What is buydigital.com?</font></span></h3>
+<font color="#e7e6e6">
+  <li><h4>
+    <i class="fa fa-check"></i> <a href="https://takipcimedyasi.com" title="en ucuz smm panel">Cheapest Smm Panel</a></h4></li>
+	<li><h4><i class="fa fa-check"></i> <a href="https://takipcimedyasi.com" title="Sosyal Medya Bayilik paneli">Social Media Reseller panel</a></h4></li>
+	<li><h4><i class="fa fa-check"></i><a href="https://takipcimedyasi.com" title="instagram bayilik paneli">Instagram dealership panel</a></h4></li>
+	<li><h4><i class="fa fa-check"></i><a href="https://takipcimedyasi.com" title="smm bayilik paneli">SMM dealership panel</a></h4></li>
+<ul>
+</ul></font></ul>
+  </div> </div>
+</div>
+  </div><center>
+
+
+
+
+
+{% include 'footer.twig' %}

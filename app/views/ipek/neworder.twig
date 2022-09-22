@@ -1,0 +1,195 @@
+
+
+{% include 'header.twig' %}
+
+  
+
+<div class="inner-page">
+  <!-- top section -->
+  <section>
+    <div class="container"> 
+      {% if user['admin_type'] > 1 %}
+      <h1 style="text-align: center;"> <p><img src="https://www.sosyalatom.com/images/illustration.svg" alt="" width="274" height="245" /></p><hr><strong>WELCOME !</strong>
+  </h1>
+<h3 style="text-align: center;"><strong>Hello Dear &ouml; result, Bug &uuml; How are you?</strong></h3>
+<p style="text-align: center;"><strong>Helping You&ccedil;Some &Ouml;You can reach the most pages here!</strong></p>
+<hr>
+<p style="text-align: center;"><a class="btn btn-green" href="admin/orders">Orders</a> <a class="btn btn-blue" href="/admin/payments/online">Online &Ouml;also studies</a> <a class="btn btn-green" href="/admin/payments/bank">&Ouml;Payment Requests</a> <a class="btn btn-blue" href="/admin/tickets">Support Requests</a></p>
+<hr> <br><br>   {% endif %}
+            <!-- alert -->
+         {% if user['balance'] < 5 %}
+      <div class="alert alert-dismissible alert-danger">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <strong>Dear @{{ user['username'] }}, </strong> <br>Your balance seems to be low, do not forget to load the balance for trouble free service.
+      </div>
+     {% endif %}
+      <!-- alert end -->
+      <div class="row">        
+        <div class="col-lg"> 
+          <div class="card order-dashboard">
+            <div class="card-body">
+              <div class="icon rounded-circle">
+                <i class="fa fa-shopping-basket"></i>
+              </div>
+               <div class="right-side">
+                
+                <a href="/orders" class="btn btn-green">Orders</a>
+              </div>
+              <div class="content-box">
+                <div class="title">Amount Spent</div>
+                <div class="numbers"><i class="fa fa-rupee"></i>{{ user['spent'] }}</div>
+              </div>
+              <div class="des-sec">Current Balance <span><i class="fa fa-rupee"></i>{{ user['balance'] }}</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg">
+          <div class="card order-dashboard">
+            <div class="card-body">
+              <div class="icon rounded-circle">
+                <i class="	fa fa-money"></i>
+              </div>
+              <div class="right-side">
+                
+                <a href="/addfunds" class="btn btn-green">Add Funds</a>
+              </div>
+              <div class="content-box">
+                <div class="title">Current Balance</div>
+                <div class="numbers"><i class="fa fa-rupee"></i>{{ user['balance'] }}</i></div>
+              </div>
+              <div class="des-sec">
+                Amount Spent <span><i class="fa fa-rupee"></i>{{ user['spent'] }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end top section -->
+  
+  <section>
+    <div class="container">
+      <div class="row">
+        
+        <div class="col-lg">
+                           {% if error %}
+      <div class="alert alert-dismissible alert-danger">
+        {{ errorText }}
+      </div>
+    {% endif %}
+
+    {% if data["order"]["success"] == 1 %}
+      <div class="alert alert-dismissible alert-success">
+          <strong> Order ID: </strong> {{ data['order']['id'] }} <br>
+          <strong> Service: </strong> {{ data['order']['service'] }} <br>
+          <strong> Link: </strong> {{ data['order']['link'] }} <br>
+          <strong> Quantity: </strong> {{ data['order']['quantity'] }} <br>
+          <strong> Price: </strong> {{ data['order']['price'] }} <br>
+          <strong> Balance: </strong>{{ data['order']['balance'] }} <br>
+      </div>
+    {% endif %}
+    {% if data["order"]["success"] == 2 %}
+      <div class="alert alert-dismissible alert-success">
+         <strong> Order ID: </strong> {{ data['order']['id'] }} <br>
+         <strong> Service: </strong> {{ data['order']['service'] }} <br>
+         <strong> Link: </strong> {{ data['order']['link'] }} <br>
+         <strong> Quantity: </strong> {{ data['order']['min'] }} - {{ data['order']['max'] }} <br>
+         <strong> Posts: </strong> {{ data['order']['posts'] }} <br>
+         <strong> Delay: </strong>{{ data['order']['delay'] }} <br>
+       </div>
+    {% endif %}
+          <div class="card">
+            <div class="card-body pt-0">
+              
+              <ul class="nav nav-tabs">
+     <!-- nav tabs -->
+                <li class="nav-item">
+                  <a class="nav-link active" href="#neworder" aria-controls="new-order" data-toggle="tab">
+                    <i class="fa fa-clone"></i> New order
+                  </a>
+                </li>
+               
+              </ul> <!-- end nav tabs -->
+              
+              <div class="tab-content">
+                
+                <div id="neworder" class="tab-pane fade in active"> <!-- neworder tab -->
+                  <form method="post" action="">
+
+            <div class="form-group">
+              <label for="orderform-category" class="control-label">Category</label>
+              <select class="form-control" id="neworder_category" name="categories">
+                {% for category in categories %}
+                    <option value="{{ category["category_id"] }}" {% if category["category_id"] == data['categories'] %} selected {% endif %} >{{ category["category_name"] }}</option>
+                {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+              <label for="orderform-service" class="control-label">Services</label>
+              <select class="form-control" id="neworder_services" name="services">
+
+              </select>
+            </div>
+
+            <div id="neworder_fields"></div>
+            <br>
+
+<div class="form-group">
+                      <div class="card card-mini price bg-light">
+                        <div class="card-body">
+                          <span class="card-text">
+                            <b>Order amount</b></span>
+                        <input type="text" class="color-text" id="charge" readonly>
+                        </div>
+                      </div>
+                    </div>
+                    
+    
+
+
+          <button type="submit" class="btn btn-blue">Order</button>
+
+        </form>
+                </div> <!-- new order tab end -->
+                
+             <!-- mas order tab end -->
+                
+              </div>
+            </div>
+          </div>
+        </div> <!-- prvi col-lg end -->
+        
+        <div class="col-lg">
+          <div class="accordion mb-30">
+            <div class="card bg-white">
+              <div class="card-header" id="headingOne">
+                  <button class="btn" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"><i class="	fa fa-bullhorn"></i> Announcements <i class="arrow fa fa-angle-up"></i><i class="arrow fa fa-angle-down"></i> </button>
+              </div>
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                  <p class="card-text">
+                  	<p><font color="#1f2324" face="Open Sans, sans-serif">  {{ contentText }}</font></p>
+                  </p>
+                  <p><i class="blue">- {{ site["site_name"] }}</i></p>
+                </div>
+              </div>
+                          </div>
+          </div>
+          
+        
+                </div>    
+			  </div>
+            </div>
+          </div>
+        </div> <!-- drugi col-lg end -->
+        
+      </div> <!-- row end -->
+    </div> <!-- container end -->
+    
+   
+  </section>
+</div>
+{% include 'footer.twig' %}
+
+

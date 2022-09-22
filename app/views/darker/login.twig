@@ -1,0 +1,138 @@
+{% include 'header.twig' %}
+
+
+
+
+
+
+<div class="container">
+    <div class="row mt-8 m-mt-3">
+        <div class="col-lg-6 col-md-12 col-xs-12 hidden-xs">
+            <br><br><br>
+ <img src="https://ucarecdn.com/e75a9281-6417-4cdd-9790-21a49af866ee/webdevelopmentresponsive.png" width="470" height="%100"></div>
+
+
+            <div class="col-lg-5 col-md-12 col-xs-12">
+            
+         <font size="7" font color="#fff">Welcome!</font><br>
+
+        
+        
+
+     
+      {% if errorText %}
+        <div class="alert alert-dismissible alert-danger">
+          <button type="button" class="close" data-dismiss="alert">×</button>
+          {{ errorText }}
+        </div>
+      {% endif %}
+      {% if successText %}
+        <div class="alert alert-dismissible alert-success">
+          <button type="button" class="close" data-dismiss="alert">×</button>
+          {{ successText }}
+        </div>
+      {% endif %}
+      <div class="well saydam">
+        <form  method="post" action="">
+          
+          
+        <div class="loginbox">  
+          
+   <div class="form-group">
+                        <div class="login-label ml-1 pt-3 pl-3">
+                            <i class="sli icon-user" aria-hidden="true"></i>
+            <label for="username" class="control-label">Username</label>
+                        </div>
+                        <input type="text" class="form-control login-input" id="username" name="username" placeholder="{{ lang['signin.username'] }}">
+                    </div>
+
+          <div class="form-group">
+                        <div class="login-label ml-1 pt-1 pl-3">
+                                       <label for="password" class="control-label">Password</label>
+                          <a href="/resetpassword" class="pull-right">Reset Password </a>
+			
+                                                    </div>
+                        <input type="password" class="form-control login-input" id="password" name="password" placeholder="{{ lang['signin.password'] }}">
+            
+                    </div>     </div>    
+      
+          <div class="checkbox">
+              <input type="checkbox" name="remember" value="1" id="remember">
+              <label for="remember">
+                  Remember my information
+              </label>
+                                    
+                              </div>
+
+                       {% if captcha %}
+            <div class="form-group">
+              <div class="g-recaptcha" data-sitekey="{{ captchaKey }}"></div>
+            </div>
+          {% endif %}   
+ 
+          <button type = "submit" class = "btn btn-primary login-btn btn-block"> <strong> Sign In </strong> </button> <br>
+<p class = "free subscription"> {{settings ['site_name']}} memberships are completely free. Do not respect the people who want to sell you money for membership! If you don't have a {{settings ['site_name']}} membership, you can <a href="/signup"> sign up now! </a>
+              <span class = "forget-ps"> Create New Account <a href="/signup"> Sign Up </a> </span>
+          
+                  </form>
+      </div>     
+      </div>
+      </div>
+
+
+  
+  <hr>
+  
+  
+<div class="row mt-5 m-d-none ">
+        <div class="col-12">
+            <h1 class = "h1-highlight text-center"> SMM Panel - <span class = "highlight"> Social Media
+                    Dealership Panel </span> </h1>
+            <P class = "p-feature text-to-center"> {{settings [ 'site_name']}} Turkey's cheapest and largest social media franchises
+                panel offers you the best service. {{settings ['site_name']}}, social media apps
+                It helps you in the current generation by using social media.
+            </P>
+            <p class = "p-feature text-center mt-3">
+                Reaching an audience you set on {{settings ['site_name']}} social media platforms if used properly
+                provides all the support for. This is actually the creation purpose of {{settings ['site_name']}}.
+            </p>
+      <hr>
+          
+          
+          <div class = "col-12">
+  <h3 class = "corporate-solutions-h text-center mt-4"> Corporate Solutions with {{settings ['site_name']}} </h3>
+    <p class = "institutional-solutions-p text-center"> {{settings ['site_name']}} You can create your own business and generate income on the panel. Our corporate interface, easy operation and our ability to partner with our unique API support, Turkey's largest "Social Media Marketing" We are proud to be the site. </p>
+    </div>
+
+          
+          <div class="row mt-4 m-d-none text-center">
+      <div class="col-lg-4 col-xs-12">
+        <img class="kurumsal-cozumler-img" src="https://svgshare.com/i/Dcj.svg" alt="" title="">
+        
+        <h4 class = "corporate-solutions-h4 mt-4"> Corporate Interface </h4>
+        <p class = "institutional-solutions-p2"> {{settings ['site_name']}} You can view your transactions on the SMM Panel in detail and present more detailed reports to your customers. </p>
+      </div>
+      <div class = "col-lg-4 col-xs-12">
+        <img class = "corporate-solutions-img" src = "https://svgshare.com/i/DbB.svg" alt = "" title = "">
+        <h4 class = "corporate-solutions-h4 mt-4"> Easy Operation </h4>
+      <p class = "institutional-solutions-p2"> You can make your orders start instantly by performing your transactions easily on the {{settings ['site_name']}} panel. In this case, you can make your transactions quickly by saving time. </p>
+      </div>
+      <div class = "col-lg-4 col-xs-12">
+        <img class = "corporate-solutions-img" src = "https://svgshare.com/i/Ddr.svg" alt = "" title = "">
+        <h4 class = "corporate-solutions-h4 mt-4"> API Support </h4>
+      <p class = "corporate-solutions-p2"> {{settings ['site_name']}} With API support, you can sell your own customers on your website by putting your commission, in this case, you can generate income by creating your own business. </p>
+      </div>
+  </div>
+          
+          
+
+        </div>
+    </div>
+  
+  <br><br><br>
+
+
+
+
+
+{% include 'footer.twig' %}

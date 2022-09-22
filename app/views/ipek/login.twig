@@ -1,0 +1,300 @@
+{% include 'header.twig' %}
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<div class="top-banner" style="padding-bottom: 176.429px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md">
+      
+      <h1 class="heading"> {{ contentText }} </h1>
+      <h4 class="sub-heading"><strong>{{ site["site_name"] }}</strong> Meet the Quality!</h4>
+      <p class="pera"><strong>{{ site["site_name"] }}</strong> You can purchase services by uploading a 24/7 automatic balance at the same time and you can earn income by selling to your customers.</p>
+      <p class="pera"><strong>{{ site["site_name"] }}</strong> the services provided start automatically. If you are the panel owner, you can quickly offer our great services to your customers with API support.</p>
+      <a href="/signup" class="btn btn-green mr-2 hvr-bob">Join for Free</a>
+      <a href="#" class="btn btn-white hvr-bob">Login</a>
+    </div>
+      
+      <div class="col-md text-md-right">
+        <div class="card login-panel">
+          <div class="card-body">
+            <div class="title">Login</div>
+             {% if errorText %}
+        <div class="alert alert-dismissible alert-danger">
+          <button type="button" class="close" data-dismiss="alert">×</button>
+          {{ errorText }}
+        </div>
+      {% endif %}
+      {% if successText %}
+        <div class="alert alert-dismissible alert-success">
+          <button type="button" class="close" data-dismiss="alert">×</button>
+          {{ successText }}
+        </div>
+      {% endif %}
+            <form  method="post" action="">
+              
+              
+              <div class="form-group">
+                <label for="username" class="control-label">Username</label>
+                <input type="text" class="form-control" name="username" placeholder="User name">
+              </div>
+              <div class="form-group form-group__password">
+                <label for="password" class="control-label">Password</label>
+                <input type="password" class="form-control" name="password" placeholder="Password">
+                                                  <a href="/resetpassword" class="link float-right forgot-password">Forgot Password?</a>
+                              </div>
+              
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"  name="remember" value="1" id="remember"> Remember Me
+                </label>
+              </div>
+
+                {% if captcha %}
+            <div class="form-group">
+              <div class="g-recaptcha" data-sitekey="{{ captchaKey }}"></div>
+            </div>
+          {% endif %}
+             
+              <div class="form-group text-center">
+              	<button type="submit" class="btn btn-green hvr-bob">Login</button>
+              </div>
+              
+                            <p class="text-center">Not a member yet? <a href="/signup">Create Free Membership</a></p>
+                            <p class="text-center">Old User ? <a href="http://old.superinstantpanel.com">Click Here</a></p>
+                          </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--  -->
+  <script src='https://www.google.com/recaptcha/api.js?hl=tr'></script>
+</div>
+
+<section class="bg-light smm-services"> <div class="container">
+  <h2 class="sec-heading"><span class="blue">🏆 #1</span> The best in the market<span class="blue"> SMM Panel 👈</span><small>Tired of looking at hundreds of panels with simple services that don't work? Check out our social media services with the best quality and faster delivery on the market!</small>
+  </h2>
+
+        </div> </section>
+       
+<div class="all-order-counts">1219473</div>
+     <section class="advantage-sec" style="
+    background-color: white;
+"> <div class="container">
+            <h2 class="sec-heading">Customer <span class="blue">satisfaction 👍</span>
+			<small>Quality Services, User-Friendly Interface, Hassle-Free Service</small>
+            </h2>
+             </section> 
+             
+<section class="bg-light smm-services"> <div class="container">
+            <h2 class="sec-heading">For All Platforms <span class="blue">Our service </span>Active 💪
+			<small>SNot limited to just followers & likes! Original Designs, Views, Interpretation, Poll Voting and More</small>
+            </h2>
+            <div class="row">
+                <div class="col-md-6 col-lg-4 cols">
+                    <div class="card facebook hvr-icon-push">
+                        <div class="card-body">
+                            <span class="icon"> <i class="fab fa-facebook hvr-icon"></i> </span>
+                            <h3 class="title"><b>FACEBOOK</b> services</h3>
+                            <p class="pera">
+Create a brand image with the likes on your Facebook page and increase your sales. Whether you are a corporate firm or an individual page manager;
+Status rating, follower, comment, review rating, poll rating, page scoring
+Let's take you one step forward with our services like. Corporate or individual
+It's time to strengthen your account.
+</p>   
+                        </div>
+                    </div>
+                    
+                </div>
+				
+                
+                <div class="col-md-6 col-lg-4 cols">
+                    <div class="card instagram hvr-icon-push">
+                        <div class="card-body">
+                            <span class="icon"> <i class="fab fa-instagram hvr-icon"></i> </span>
+                            <h3 class="title"><b>INSTAGRAM</b> services</h3>
+                            <p class="pera">It is a fact that now people or companies are evaluated according to their audience in Instagram.
+This is exactly where we come into play. Follower, likes, interaction, views, poll rating, comments
+Take a step closer to owning an audience by benefiting from our services such as likes, live viewers, and discover!</p>   
+                        </div>
+                    </div>
+                    
+                </div>
+				
+            
+                <div class="col-md-6 col-lg-4 cols">
+                    <div class="card twitter hvr-icon-push">
+                        <div class="card-body">
+                            <span class="icon"> <i class="fab fa-twitter hvr-icon"></i> </span>
+                            <h3 class="title"><b>TWITTER</b> services</h3>
+                            <p class="pera">Having quality audience on Twitter, getting favorite and RT service for your tweets, watching videos and even being on the agenda on Twitter
+(Trend Topic) is so easy with us! If you want to stand out in every sense on Twitter, you can
+create and start taking advantage of our services. Watch the rise of your company or personal account.</p>   
+                        </div>
+                    </div>
+                    
+                </div>
+				<div class="col-md-6 col-lg-4 cols">
+                    <div class="card youtube hvr-icon-push">
+                        <div class="card-body">
+                            <span class="icon"> <i class="fab fa-youtube hvr-icon"></i> </span>
+                            <h3 class="title"><b>YOUTUBE</b> services</h3>
+                            <p class="pera">
+Are you ready to revive your Youtube channel? Viewing, likes,
+With subscribers and comment services, your channel will be more than ever!
+All you have to do is sign up and take advantage of our services.
+</p>   
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <div class="col-md-6 col-lg-4 cols">
+                    <div class="card other hvr-icon-push">
+                        <div class="card-body">
+                            <span class="icon"> <i class="fas fa-globe-asia hvr-icon"></i> </span>
+                            <h3 class="title"><b>Web Site</b> services</h3>
+                            <p class="pera">The identity of a corporate company is the website. If you don't have a Website, this
+no problem. We make SEO compatible sites for you.
+Besides, the site is on top of your competitors with our organic hit service.
+we can get you involved.</p>   
+                        </div>
+                    </div>
+                    
+                </div>
+				  <div class="col-md-6 col-lg-4 cols">
+                    <div class="card diger hvr-icon-push">
+                        <div class="card-body">
+                            <span class="icon"> <i class="fas fa-desktop hvr-icon"></i> </span>
+                            <h3 class="title"><b>OTHER</b> services</h3>
+                            <p class="pera">Not just an SMM site, it's a full service. Promotion support, signage, printed products, promotional products, social media services, web services, hosting, collaboration with phenomena and more {{ site["site_name"] }} with you assurance.</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div> </section> 
+ <section class="bg-light"> <div class="container">
+            <h2 class="sec-heading">Ayrıcalıklar <span class="blue">in your</span> your Rights! 
+			<small>Aren't You Tired of Losing Time and Cash on Ordinary SMM Panels?</small>
+            </h2>
+            <div class="row compare-panel">
+                <div class="cols col-lg">
+                    <div class="card">
+                        <div class="card-header bg-red">
+                            <h3 class="card-title">
+                                <span class="icon"></span> ORDINARY SMM</h3>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group">
+                                <li class="list-group-item hvr-icon-up">
+                                    <span class="icon"><i class="far fa-frown red hvr-icon"></i></span> <span> 5% Commission Paid Extra When Adding Balance</span>
+                                </li>
+                                <li class="list-group-item hvr-icon-up">
+                                    <span class="icon"><i class="far fa-frown red hvr-icon"></i></span> <span> Untracked, Inoperative Services and System Errors</span>
+                                </li>
+                                <li class="list-group-item hvr-icon-up">
+                                    <span class="icon"><i class="far fa-frown red hvr-icon"></i></span> <span> Limited Technical Support</span>
+                                </li>
+                                <li class="list-group-item hvr-icon-up">
+                                    <span class="icon"><i class="far fa-frown red hvr-icon"></i></span> <span> Average 20-30 Pieces (Limited Platform)</span>
+                                </li>
+                                <li class="list-group-item hvr-icon-up">
+                                    <span class="icon"><i class="far fa-frown red hvr-icon"></i></span> <span> Money Loss on Partially Completed Orders</span>
+                                </li>
+                                <li class="list-group-item hvr-icon-up">
+                                    <span class="icon"><i class="far fa-frown red hvr-icon"></i></span> <span> Serious Follower / Likes Fall in Short Time, Bot Accounts</span>
+                                </li>
+                                <li class="list-group-item hvr-icon-up">
+                                    <span class="icon"><i class="far fa-frown red hvr-icon"></i></span> <span> Remittance Only By Transfer / Eft</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="cols col-lg">
+                    <div class="card">
+                        <div class="card-header bg-green">
+                            <h3 class="card-title">
+                            <span class="icon"></span>MEDIA DARK</h3>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group">
+                                <li class="list-group-item hvr-icon-up">
+                                    <span class="icon"><i class="far fa-smile green hvr-icon"></i></span> <span> No Commission Payment, 3-6-9 Months Installments and Bonuses for Cash Price</span>
+                                </li>
+                                <li class="list-group-item hvr-icon-up">
+                                    <span class="icon"><i class="far fa-smile green hvr-icon"></i></span> <span> Daily Service Controls, Regular System Updates</span>
+                                </li>
+                                <li class="list-group-item hvr-icon-up">
+                                    <span class="icon"><i class="far fa-smile green hvr-icon"></i></span> <span> 24/7 Technical and Live Support</span>
+                                </li>
+                                <li class="list-group-item hvr-icon-up">
+                                    <span class="icon"><i class="far fa-smile green hvr-icon"></i></span> <span> +150 Quality Service (All Platforms)</span>
+                                </li>
+                                <li class="list-group-item hvr-icon-up">
+                                    <span class="icon"><i class="far fa-smile green hvr-icon"></i></span> <span> Automatic Balance Refund for Partially Completed Orders</span>
+                                </li>
+                                <li class="list-group-item hvr-icon-up">
+                                    <span class="icon"><i class="far fa-smile green hvr-icon"></i></span> <span> Many Guaranteed & Automatic Compensated Service, Real Accounts</span>
+                                </li>
+                                <li class="list-group-item hvr-icon-up">
+                                    <span class="icon"><i class="far fa-smile green hvr-icon"></i></span> <span> Domestic / International Credit Card (24/7), Money Transfer / Eft, Advance Account, Bitcoin</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> </section>
+
+  <div class="support-panel">
+    <div class="bg-graphic wave" style="margin-top: -226.429px;"></div>
+    <div class="container position-relative">
+      <h3 class="title">
+            <i class="fa fa-star"></i><span> We are here to help you 24/7!</span>
+        </h3>
+      <div class="row">
+        <div class="col-md">
+          <div class="card"> <a href="/tickets" class="card-body hvr-icon-pop"><i class="fa fa-comments hvr-icon"></i> Support Request</a>
+          </div>
+        </div>
+        <div class="col-md">
+          <div class="card"> <a href="#" class="card-body hvr-icon-pop"><i class="fa fa-envelope hvr-icon"></i> info@smmpanels.store</a>
+          </div>
+        </div>
+        <div class="card"> <a href="#" class="card-body hvr-icon-pop"><i class="fab fa-whatsapp hvr-icon"></i> </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+</section>
+    <hr>
+<section> 
+  <div class="container">
+            <h2 class="sec-heading">Do you want to earn money with{{ site["site_name"] }} ? <small>You can start a revolution in your own social media marketing services business!
+</small>
+            </h2>
+            <div class="row marketing-panel">
+                <div class="col-md-7 mb-3">
+        
+                    <p class="font-weight-bold">{{ site["site_name"] }} Just take a few simple steps to start making money with the SMM Panel:</p>
+
+                    <ul class="list">
+                        <li><i class="fa fa-check-circle"></i> On your own website {{ site["site_name"] }} Sign up to use the API</li>
+                        <li><i class="fa fa-check-circle"></i> Choose the social media services you want to offer</li>
+                        <li><i class="fa fa-check-circle"></i> Add them to your site based on a certain rate of profit</li>
+                        <li><i class="fa fa-check-circle"></i> Start selling your services!</li>
+                    </ul>
+
+                    <p class="font-italic">It's that simple!</p>
+
+                    <a href="/signup" class="btn btn-blue hvr-bob">SIGN UP FOR FREE</a>    </div>
+                <div class="col-md-3">
+                    
+                </div>
+            </div>
+        </div> 
+</section>
+
+{% include 'footer.twig' %}
